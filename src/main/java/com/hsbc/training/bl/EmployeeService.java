@@ -8,13 +8,16 @@ public class EmployeeService {
 	
 	 private EmployeeDAO employeeDAO;
 
-	    public void createEmployee(Employee employee) throws EmployeeAlreadyExistsException {
-	        // Check if the employee already exists in the DAO
+	    public EmployeeService(EmployeeDAO employeeDAO2) {
+		// TODO Auto-generated constructor stub
+	}
+
+		public void createEmployee(Employee employee) throws EmployeeAlreadyExistsException {
+	        // we need to Check if the employee already exists in the DAO
 	        // If not, create the employee
 	    }
 
 	    public Employee getEmployeeById(int employeeId) {
-
 
 	        return employeeDAO.getEmployeeById(employeeId);
 

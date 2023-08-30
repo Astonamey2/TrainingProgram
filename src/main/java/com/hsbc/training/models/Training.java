@@ -2,9 +2,10 @@ package com.hsbc.training.models;
 
 import java.util.Date;
 
+//creating model class Training entity
 public class Training {
 	
-	
+	//declaring the data members for the attributes of the employee and training course
 	    private int id;
 	    private String name;
 	    private String skills;
@@ -12,6 +13,8 @@ public class Training {
 	    private Date endDate;
 	    private int labDurationInMinutes;
 	    
+	    
+	    //getters and setters methods for all the attributes of the training course
 		public int getId() {
 			return id;
 		}
@@ -49,7 +52,7 @@ public class Training {
 			this.labDurationInMinutes = labDurationInMinutes;
 		}
 		
-		
+		//parameterized constructor for the Training class
 		public Training(int id, String name, String skills, Date startDate, Date endDate, int labDurationInMinutes) {
 			super();
 			this.id = id;
@@ -60,7 +63,7 @@ public class Training {
 			this.labDurationInMinutes = labDurationInMinutes;
 		}
 		
-		// Custom exceptions
+		// Custom exceptions for this projects 
 		public class EmployeeAlreadyExistsException extends Exception {
 		    public EmployeeAlreadyExistsException(String message) {
 		        super(message);

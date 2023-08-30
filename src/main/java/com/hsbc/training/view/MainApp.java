@@ -11,8 +11,14 @@ import com.hsbc.training.models.Training;
 import com.hsbc.training.models.Training.EmployeeAlreadyExistsException;
 import com.hsbc.training.models.Training.TrainingAlreadyExistsException;
 
+//Register an Employee for Training
+// Handle exceptions for Employee not found and Training not found 
 public class MainApp {
 	    public static void main(String[] args) {
+	    	
+	    	//This creates an instance of the EmployeeService class and passes the employeeDAO instance as a parameter 
+	    	//to its constructor. The EmployeeService class provides business logic .By passing employeeDAO to its 
+	    	//constructor, the EmployeeService can utilize the methods and functionalities provided by the EmployeeDAO for data access.
 	        EmployeeDAO employeeDAO = new EmployeeDAO();
 	        EmployeeService employeeService = new EmployeeService(employeeDAO);
 
@@ -30,13 +36,12 @@ public class MainApp {
 	        // Create a Training
 	        Training training = new Training(1, "Java Basics", "Java Programming", new Date(), new Date(), 60);
 	        try {
-	            trainingService.createTraining(training);
+	            TrainingService.createTraining(training);
 	        } catch (TrainingAlreadyExistsException e) {
 	            System.out.println(e.getMessage());
 	        }
 
-	        // Register an Employee for Training (Implement this logic)
-	        // Handle exceptions for Employee not found and Training not found here
+	        
 	    }
 	}
 

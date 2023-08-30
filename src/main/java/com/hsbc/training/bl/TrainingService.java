@@ -11,16 +11,16 @@ public interface TrainingService {
 	private TrainingDAO trainingDAO;
 
     public static void createTraining(Training training) throws TrainingAlreadyExistsException {
-        // Check if the training already exists in the DAO
-        // If not, create the training
+        // we need to check if the training already exists in the DAO
+        // If not, create the training =method
     }	
 
-    public Training getTrainingById(int trainingId) {
+    public static Training getTrainingById(int trainingId) {
         return trainingDAO.getTrainingById(trainingId);
     }
 
     public static void registerEmployeeForTraining(int employeeId, int trainingId) throws TrainingNotFoundException {
-        Employee employee = employeeService.getEmployeeById(employeeId);
+        Employee employee = EmployeeService.getEmployeeById(employeeId);
         if (employee == null) {
             throw new EmployeeNotFoundException("Employee not found.");
         }
